@@ -55,3 +55,14 @@ def produto(nome_produto):
         'produto.html',
         produto = produto_dict[nome_produto]
     )
+
+@app.route('/usuario/<nome_usuario>')
+def usuario(nome_usuario):
+
+    usuarios = ['gabriela', 'enzo', 'larissa', 'lucas', 'donizete', 'danton']
+
+    if nome_usuario in usuarios:
+        return render_template('usuario.html', usuario=nome_usuario)
+    else:
+       return render_template('usuario.html', usuario=None) 
+   
