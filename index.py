@@ -13,33 +13,45 @@ def index():
 
 @app.route('/produtos/')
 def produtos():
-    return render_template('produtos.html')
 
-# @app.route("/produtos")
-# def produtos():
-#     return """
-#         <h2>Cadeira</h2>
-#         <p>R$ 10,00</p>
-#         <a href="/produto/Cadeira">Ver mais</a>
+    produtos_lista = ['mesa', 'cadeira', 'papel', 'caneta']
 
-#         <h2>Mesa</h2>
-#         <p>R$ 10,50</p>
-#         <a href="/produto/Mesa">Ver mais</a>
-
-#         <h2>Papel</h2>
-#         <p>R$ 11,50</p>
-#         <a href="/produto/Papel">Ver mais</a>
-
-#         <br><br>
-#         <a href="/">Voltar</a>
-#     """
+    return render_template('produtos.html', produtos=produtos_lista)
 
 @app.route("/produto/<nome_produto>")
 def produto(nome_produto):
 
-    produtos = {
-        'Cadeira': 'caderia preta',
-        'Mesa': 'Essa mesa é muito legal',
-        'Papel': 'Este papel é branco'
+    produto_dict = {
+        'cadeira': {
+            'nome': 'cadeira de escritorio',
+            'descricao': 'Essa cadeira é excelente',
+            'cor': 'vermelha',
+            'valor': 'R$ 10,50'
+        },
+        'mesa': {
+            'nome': 'mesa de escritorio',
+            'descricao': 'mesa boa para trabalhar',
+            'cor': 'azul',
+            'valor': 'R$ 50,00'
+        },
+        'papel': {
+            'nome': 'papel 4x4',
+            'descricao': 'papel para desenhar',
+            'cor': 'branca',
+            'valor': 'R$ 2,99'
+        },
+        'caneta': {
+            'nome': 'Caneta BIC',
+            'descricao': 'Caneta muito boa',
+            'cor': 'azul',
+            'valor': 'R$ 1,00'
+        },
     }
-    return render_template('produto.html', nome_produto = nome_produto)
+
+
+    # produto_list = ['branco', 'R$ 10,50']
+
+    return render_template(
+        'produto.html',
+        produto = produto_dict[nome_produto]
+    )

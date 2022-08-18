@@ -1,14 +1,21 @@
-<h2>Cadeira</h2>
-<p>R$ 10,00</p>
-<a href="/produto/Cadeira">Ver mais</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Produtos</title>
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <p>Os produtos que temos disponíveis</p>
+    <ul>
 
-<h2>Mesa</h2>
-<p>R$ 10,50</p>
-<a href="/produto/Mesa">Ver mais</a>
+        {% for produto in produtos %}
 
-<h2>Papel</h2>
-<p>R$ 11,50</p>
-<a href="/produto/Papel">Ver mais</a>
+        <li><a href="/produto/{{produto}}">{{produto|capitalize}}</a></li>
 
-<br><br>
-<a href="/">Voltar</a>
+        {% endfor  %}
+    </ul>
+</body>
+</html>

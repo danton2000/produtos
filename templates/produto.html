@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{nome_produto}}</title>
+    <title>{{produto['nome']|title}}</title>
 </head>
 <body>
-    <h1>{{nome_produto}}</h1>
-    <p>Aqui iremos ter a descriçao do nosso produto</p>
-    <p>O produto é {{nome_produto}}</p>
+    <h1>{{produto['nome']|title}}</h1>
+    <h3>Descrição: {{produto['descricao']|title}}</h3>
+    <p>Cor: {{produto['cor']|upper}}</p>
+    <p>Valor: {{produto['valor']}}</p>
+    <a href="/produtos">Voltar</a>
 </body>
 </html>
