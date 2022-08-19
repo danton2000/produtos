@@ -4,12 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return """
-        <h1>Loja virtual</h1>
-        <p>Compre seus produtos, pelo melhor preço </p>
-
-        <a href="/produtos">Nosso Produtos</a>
-    """
+    return render_template('index.html')
 
 @app.route('/produtos/')
 def produtos():

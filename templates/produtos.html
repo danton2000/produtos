@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista Produtos</title>
-</head>
-<body>
-    <h1>Lista de Produtos</h1>
+{% extends "base.html" %}
+
+{% block title %} Lista Produtos {% endblock %}
+
+{% block pagina %}
+    <h2>Lista de Produtos</h2>
     <p>Os produtos que temos disponíveis</p>
     <ul>
 
@@ -17,5 +13,7 @@
 
         {% endfor  %}
     </ul>
-</body>
+
+    <a href="/">Voltar</a>
+{% endblock %}
 </html>

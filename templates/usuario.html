@@ -5,12 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
-            {% if usuario != None%} Minha Conta | {{usuario}} {% else %} Acesso
+            {% if usuario != None %} Minha Conta | {{usuario}}
+            {% else %} Acesso
             Negado {% endif %}
         </title>
     </head>
     <body>
-        {% if usuario != None%}
+        {% if usuario != None %}
         <h1>Nome do Usuário: {{usuario}}</h1>
         {% else %}
         <h1>Acesso Negado!</h1>
